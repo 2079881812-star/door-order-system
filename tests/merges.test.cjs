@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict'),fs=require('node:fs');require('./load-rules.cjs');require('../src/engine.js');const E=global.OrderEngine;
+const make=(date,customer,destination='泉州市',width=5.6)=>Object.assign(E.parse(`JF30左右单开两窗 宽${width}高2.8`,{date}),{customer,destination});
+const orders=[make('2026-09-26','泉州市示例客户甲'),make('2026-09-26','泉州市示例客户甲','泉州市',7.2),make('2026-09-26','示例客户乙'),make('2026-09-27','示例客户乙'),make('2026-09-27','',''),make('2026-09-27','',''),make('2026-09-26','泉州市示例客户甲')];
+const expected=['A2:A4','A5:A7','B2:B3','B4:B5'],before=JSON.stringify(orders),layout=E.productionLayout(orders);
+assert.deepEqual(layout.merges,expected);assert.equal(JSON.stringify(orders),before);
+assert.deepEqual(layout.rowSpans.map(r=>r.slice(0,2)),[[3,2],[0,0],[0,2],[3,0],[0,1],[0,1],[1,1]]);
+assert.equal(layout.rows.length,7);assert.ok(layout.rows.every(r=>r.length===14));
+const table=E.productionTable(orders);assert.equal((table.match(/rowspan=/g)||[]).length,4);assert.equal((table.match(/<th>/g)||[]).length,14);
+assert.equal((table.match(/<td\b/g)||[]).length,7*14-6);assert.equal((table.match(/泉州市示例客户甲/g)||[]).length,2);
+assert.equal((table.match(/2026-09-26/g)||[]).length,2);assert.ok(!table.includes('rowspan="0"'));
+const copy=E.productionTable(orders,{header:false,clipboard:true});assert.ok(!copy.includes('<th>'));assert.equal((copy.match(/rowspan=/g)||[]).length,4);
+const rows=E.tsv(orders).split('\r\n').map(r=>r.split('\t'));assert.equal(rows.length,7);assert.ok(rows.every(r=>r.length===14));assert.equal(rows[1][0],'2026-09-26');assert.equal(rows[1][1],'泉州市示例客户甲');
+assert.equal(E.productionLayout([]).merges.length,0);assert.equal(E.productionLayout([orders[0]]).merges.length,0);
+assert.deepEqual(E.productionLayout([orders[0],orders[2],orders[0]]).merges,['A2:A4']);
+const malicious=make('2026-09-27','=1+1<img src=x>','');const html=E.productionTable([malicious],{header:false,clipboard:true});assert.ok(!html.includes('<img'));assert.ok(html.includes("'=1+1&lt;img"));
+const edits=orders.map(o=>({...o}));edits[1].date='2026-09-28';edits[1].customer='另一个客户';assert.deepEqual(E.productionLayout(edits).merges,['A5:A7','B4:B5']);
+console.log('Merging passed: adjacent/nonadjacent groups, independent date/destination runs, distinct recipients, empty cells, live edits, no data mutation, HTML escaping and complete 14-column text fallback.');

@@ -1,0 +1,15 @@
+{
+  "name": "door-order-system",
+  "version": "1.9.2",
+  "private": true,
+  "description": "本机离线折叠门订单识别、生产计算与 WPS 表格导出",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs",
+    "check": "node scripts/build.mjs --check"
+  }
+}

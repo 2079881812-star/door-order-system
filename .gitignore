@@ -1,0 +1,27 @@
+# Local dependencies and temporary files
+node_modules/
+.tmp/
+tmp/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local orders, draft files and exported workbooks
+data/
+orders/
+private/
+*.xlsx
+*.xls
+*.et
+*.csv
+*.tsv
+*.zip
+*-draft.json
+*草稿*.json
+.env
+.env.*
+
+# dist/index.html is intentionally tracked for direct offline use.

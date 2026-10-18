@@ -1,0 +1,228 @@
+{
+  "version": "1.9",
+  "sourceName": "111111折叠门订单管理2026马年(1).xlsx",
+  "sheet": "排单23",
+  "formulaCount": 8717,
+  "sharedFormulaCount": 8269,
+  "profiles": {
+    "current1": {
+      "label": "2026 排单23 · 第1组",
+      "range": "排单23!O2320:X2326",
+      "parameters": {
+        "30": {
+          "halfLock": 0.39,
+          "pitch": 0.2991,
+          "source": "排单23!Q2320/S2320"
+        },
+        "28": {
+          "halfLock": 0.39,
+          "pitch": 0.2765,
+          "source": "排单23!Q2321/S2321"
+        },
+        "24": {
+          "halfLock": 0.33,
+          "pitch": 0.2397,
+          "source": "排单23!Q2322/S2322"
+        },
+        "19": {
+          "halfLock": 0.28,
+          "pitch": 0.1845,
+          "source": "排单23!Q2323/S2323"
+        },
+        "15": {
+          "halfLock": 0.25,
+          "pitch": 0.148,
+          "source": "排单23!Q2324/S2324"
+        },
+        "12": {
+          "halfLock": 0.21,
+          "pitch": 0.1226,
+          "source": "排单23!Q2325/S2325"
+        },
+        "10": {
+          "halfLock": 0.21,
+          "pitch": 0.096,
+          "source": "排单23!Q2326/S2326"
+        }
+      }
+    },
+    "current2": {
+      "label": "2026 排单23 · 第2组",
+      "range": "排单23!O2327:X2333",
+      "parameters": {
+        "30": {
+          "halfLock": 0.74,
+          "pitch": 0.2991,
+          "source": "排单23!Q2327/S2327"
+        },
+        "28": {
+          "halfLock": 0.74,
+          "pitch": 0.2765,
+          "source": "排单23!Q2328/S2328"
+        },
+        "24": {
+          "halfLock": 0.62,
+          "pitch": 0.2397,
+          "source": "排单23!Q2329/S2329"
+        },
+        "19": {
+          "halfLock": 0.52,
+          "pitch": 0.1845,
+          "source": "排单23!Q2330/S2330"
+        },
+        "15": {
+          "halfLock": 0.43,
+          "pitch": 0.148,
+          "source": "排单23!Q2331/S2331"
+        },
+        "12": {
+          "halfLock": 0.35,
+          "pitch": 0.1226,
+          "source": "排单23!Q2332/S2332"
+        },
+        "10": {
+          "halfLock": 0.35,
+          "pitch": 0.096,
+          "source": "排单23!Q2333/S2333"
+        }
+      }
+    }
+  },
+  "deductions": [
+    {
+      "value": 0.01,
+      "count": 1,
+      "cell": "F155"
+    },
+    {
+      "value": 0.02,
+      "count": 1,
+      "cell": "F1783"
+    },
+    {
+      "value": 0.04,
+      "count": 1,
+      "cell": "F1684"
+    },
+    {
+      "value": 0.05,
+      "count": 3,
+      "cell": "F609"
+    },
+    {
+      "value": 0.055,
+      "count": 16,
+      "cell": "F15"
+    },
+    {
+      "value": 0.06,
+      "count": 76,
+      "cell": "F53"
+    },
+    {
+      "value": 0.065,
+      "count": 22,
+      "cell": "F212"
+    },
+    {
+      "value": 0.07,
+      "count": 56,
+      "cell": "F6"
+    },
+    {
+      "value": 0.075,
+      "count": 167,
+      "cell": "F7"
+    },
+    {
+      "value": 0.08,
+      "count": 1718,
+      "cell": "F2"
+    },
+    {
+      "value": 0.085,
+      "count": 6,
+      "cell": "F461"
+    },
+    {
+      "value": 0.09,
+      "count": 75,
+      "cell": "F9"
+    },
+    {
+      "value": 0.095,
+      "count": 4,
+      "cell": "F372"
+    },
+    {
+      "value": 0.13,
+      "count": 1,
+      "cell": "F986"
+    },
+    {
+      "value": 0.145,
+      "count": 4,
+      "cell": "F985"
+    }
+  ],
+  "windowParts": {
+    "rail": {
+      "1": 0.078,
+      "2": 0.111,
+      "3": 0.147,
+      "4": 0.18
+    },
+    "panel": {
+      "1": 0.2,
+      "2": 0.235,
+      "3": 0.266,
+      "4": 0.298
+    }
+  },
+  "screws": {
+    "factor": 4.5,
+    "coefficient": 2.4,
+    "allowance": 3.5,
+    "source": "排单23!N2316",
+    "earlyCoefficient": 2.1,
+    "earlySource": "排单23!N2"
+  },
+  "latestEightsSource": "排单23!H2316",
+  "userRules": {
+    "defaultDeduction": 0.08,
+    "defaultFamily": "JF",
+    "families": {
+      "JF": "折叠门",
+      "JJ": "加大"
+    },
+    "jfHalfWidthsCm": {
+      "28": 15,
+      "30": 15,
+      "19": 10,
+      "12": 5,
+      "10": 5
+    },
+    "source": "用户确认的业务规则",
+    "openingCorrections": {
+      "single": 0.09,
+      "double": 0.14,
+      "leftRight": 0.16
+    },
+    "defaultHalfCounts": {
+      "single": 2,
+      "double": 4,
+      "leftRight": 2
+    },
+    "jfActualHalfSource": {
+      "28": "30",
+      "30": "30",
+      "19": "19",
+      "12": "10",
+      "10": "10"
+    },
+    "auxiliaryEnabled": false,
+    "errorMode": "signed",
+    "selectionRule": "minimum_absolute_error",
+    "selectionTie": "fewer_large_panels"
+  }
+}
